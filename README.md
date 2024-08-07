@@ -1,7 +1,7 @@
 # [AdvAnchor: Enhancing Diffusion Model Unlearning with Adversarial Anchors]()
  
 <div align='center'>
-<img src = 'images/advanchor.jpg'>
+<img src="images/advanchor.jpg" width="300" height="200">
 </div>
 
 Issues: 
