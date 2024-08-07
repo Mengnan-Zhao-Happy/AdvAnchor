@@ -1,7 +1,7 @@
-# [Forget All That Should Be Forgotten: Separable, Recoverable, and Sustainable Multi-Concept Erasure from Diffusion Models](https://github.com/Dlut-lab-zmn/SepCE4MU/blob/main/pdf/SRSME_CCS_430.pdf)
+# [AdvAnchor: Enhancing Diffusion Model Unlearning with Adversarial Anchors]()
  
 <div align='center'>
-<img src = 'images/1.jpg'>
+<img src = 'images/AdvAnchor.jpg'>
 </div>
 
 Issues: 
