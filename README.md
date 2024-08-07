@@ -55,19 +55,16 @@ To generate images from one of the custom models use the following instructions:
 ## Evaluations
 
 
-Rename the dir_name of generated images to `eval`
+For styles and objects, rename the dir_name of generated images to `eval`
 * `python train-scripts/move_image.py`
-
-Classify object categories:
+* Classify object categories:
 * `python eval-scripts/cate-cls-test.py` 
-
-Classify style categories:
+* Classify style categories:
 * `python eval-scripts/artist-cls-test.py`
 
-Rename the dir_name of generated images to `eval2`
+For exposed content, rename the dir_name of generated images to `eval2`
 * `python train-scripts2/nudity_move_image.py`
-
-Classify nudity categories:
+* Classify nudity categories:
 * `python eval-scripts/nudenet-classes.py --folder ./evaluation_folder-diff/eval/`
 
 Calculate FID and LPIPS metric values. `erase_index` represents the index of the erased category, (or not using with `erase_index` = -1).
