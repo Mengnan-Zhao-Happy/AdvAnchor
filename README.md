@@ -4,13 +4,13 @@
 <img src="images/advanchor.jpg" width="390" height="260">
 </div>
 
-**The greatest truths are the simplest.
+**The greatest truths are the simplest.**
 
-Issues: 
+Questions
 * analyze the impact of anchors on DM unlearning;
 * the trade-off between the effectiveness of concept erasure and the preservation of model performance.
 
-We
+Answers:
 * systematically analyze the impact of anchors on DM unlearning;
 * propose AdvAnchor, which includes two loss constraints and three optimization strategies to create adversarial anchors.
 
@@ -40,7 +40,7 @@ After installation, follow these instructions to train a machine unlearning mode
 * `python train-scripts/Esd.py --iter_break 1000 --train_method 'xattn' --erase_cat 'style' --erased_index 0 --devices '0,1'`
 
 ## AdvAnchor
-`erased_index` selects the erased style using , `lr` and `iter_break` are the learning rate and the maximum iteration step for unlearning, respectively. `lr2` and `w_iter_break` are the learning rate and the maximum iteration step for creating anchors, respectively. (Any question please contact me).
+* `erased_index` selects the erased style using , `lr` and `iter_break` are the learning rate and the maximum iteration step for unlearning, respectively. `lr2` and `w_iter_break` are the learning rate and the maximum iteration step for creating anchors, respectively.
 * `python train-scripts/Ladv1ablation_op1.py --erase_cat 'style' --erased_index 0 --lr 1e-5 --lr2 1e-4 --iter_break 50 --w_iter_break 30 --att_size 0 --ori_flag --devices '0,1'`
 
 Try other variants `Ladv1ablation_op2.py`,`Ladv1ablation_op3.py`,`Ladv2ablation_op1.py`,`Ladv2ablation_op2.py`,`Ladv2ablation_op3.py`.
