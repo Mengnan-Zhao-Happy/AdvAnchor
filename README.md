@@ -1,8 +1,10 @@
-# [AdvAnchor: Enhancing Diffusion Model Unlearning with Adversarial Anchors]()
+## [AdvAnchor: Enhancing Diffusion Model Unlearning with Adversarial Anchors]()
  
 <div align='center'>
 <img src="images/advanchor.jpg" width="390" height="260">
 </div>
+
+**The greatest truths are the simplest.
 
 Issues: 
 * analyze the impact of anchors on DM unlearning;
