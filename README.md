@@ -4,7 +4,7 @@
 <img src="images/advanchor.jpg" width="390" height="260">
 </div>
 
-**The greatest truths are the simplest.**
+**The greatest truths are the simplest!!!**
 
 Questions
 * analyze the impact of anchors on DM unlearning;
