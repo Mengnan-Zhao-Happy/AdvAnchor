@@ -37,29 +37,11 @@ After installation, follow these instructions to train a machine unlearning mode
 * `python train-scripts/Abconcept.py --erase_cat 'style' --erased_index 0 --lr 1e-5 --iter_break 75 --devices '0,1'`
 * `python train-scripts/Esd.py --iter_break 1000 --train_method 'xattn' --erase_cat 'style' --erased_index 0 --devices '0,1'`
 
-4. Train our AdvAnchor
-# 获取测试数据
-python eval-scripts/nudenet-classes2.py --folder ./evaluation_folder-diff/NSFW/ 
-# 移动数据
-# 测试数据
-paper2消融实验:style
-python eval-scripts/generate-images.py --model_name='' --prompts_path './data/object_classify.csv' --save_path '/abmodels/evaluation-folder-diff/' --num_samples 1 --device 'cuda:6'
-python train-scripts2/Adv_anchor2.py --erase_cat 'style' --erased_index 4 --lr 1e-5 --lr2 1e-4 --iter_break 50 --w_iter_break 20 --att_size 0 --ori_flag --devices '0,1'
+4. Train our AdvAnchor. Select the erased style using `erased_index`, `lr' and `iter_break' are the learning rate and the maximum iteration step for unlearning, respectively. `lr2' and `w_iter_break' are the learning rate and the maximum iteration step for creating anchors, respectively. (Any question please contact me).
+* `python train-scripts/Ladv1ablation_op1.py --erase_cat 'style' --erased_index 0 --lr 1e-5 --lr2 1e-4 --iter_break 50 --w_iter_break 30 --att_size 0 --ori_flag --devices '0,1'`
+Try other variants `Ladv1ablation_op2.py`,`Ladv1ablation_op3.py`,`Ladv2ablation_op1.py`,`Ladv2ablation_op2.py`,`Ladv2ablation_op3.py`.
 
-python train-scripts2/move_image2.py
-python train-scripts2/cate-cls-test.py --erase_index 0
-python eval-scripts/FID_eval.py --path1 './evaluation_folder-diff/eval' --path2 './evaluation_folder-diff/Erase-object' --erase_index 1
-python eval-scripts/lpips_eval.py --path1 './evaluation_folder-diff/eval' --path2 './evaluation_folder-diff/Erase-object'
---erase_index 0
-
-python train-scripts2/move_image2.py
-python train-scripts2/artist-cls-test.py
-
-python train-scripts2/Adv_anchor.py --erase_cat 'nudity' --erased_index 0 --lr 1e-5 --lr2 1e-4 --iter_break 50 --w_iter_break 20 --att_size 0 --ori_flag --devices '6,7'
-
-
-
-## Generating Images
+## Generate Evaluation Images
 
 To generate images from one of the custom models use the following instructions:
 
@@ -81,9 +63,10 @@ Rename the dir_name of generated images to `eval2`
 Classify nudity categories:
 * `python eval-scripts/nudenet-classes.py --folder ./evaluation_folder-diff/eval/`
 
-Calculate FID and LPIPS metric values:
-* `python eval-scripts/FID_eval.py --path1 './output/ori' --path2 './output/eval'`
-* `python eval-scripts/lpips_eval.py --path1 './output/ori' --path2 './output/eval'`
+Calculate FID and LPIPS metric values. `erase_index` represents the index of the erased category, (or not using with `erase_index` = -1).
+* `python eval-scripts/FID_eval.py --path1 './output/ori' --path2 './output/eval'` --erase_index 0
+* `python eval-scripts/lpips_eval.py --path1 './output/ori' --path2 './output/eval'` --erase_index 0
+
 
 
 
