@@ -28,8 +28,7 @@ After installation, follow these instructions to train a machine unlearning mode
 1. Generate data and then put these samples to `./data/train/{0,1,2,3,4,5,6,7,8,9}` or `./data/eval/{0,1,2,3,4,5,6,7,8,9}`
 
 * `python eval-scripts/generate-data.py --prompt 'Van Gogh' --model_name '0' --save_path './data/' --num_samples 1 --device 'cuda:0'`
-
-`--prompt` should be `Van Gogh`, `Picasso`, `Cezanne`, `Jackson Pollock`, `Caravaggio`, `Keith Haring`, `Kelly McKernan`, `Tyler Edlin`, and `Kilian Eng` for style unlearning.
+* `--prompt` should be `Van Gogh`, `Picasso`, `Cezanne`, `Jackson Pollock`, `Caravaggio`, `Keith Haring`, `Kelly McKernan`, `Tyler Edlin`, and `Kilian Eng` for style unlearning.
 
 2. Train classification model 
 * `python train-scripts/artist-cls-train.py --device 'cuda:0'`
@@ -42,8 +41,7 @@ After installation, follow these instructions to train a machine unlearning mode
 ## AdvAnchor
 * `erased_index` selects the erased style using , `lr` and `iter_break` are the learning rate and the maximum iteration step for unlearning, respectively. `lr2` and `w_iter_break` are the learning rate and the maximum iteration step for creating anchors, respectively.
 * `python train-scripts/Ladv1ablation_op1.py --erase_cat 'style' --erased_index 0 --lr 1e-5 --lr2 1e-4 --iter_break 50 --w_iter_break 30 --att_size 0 --ori_flag --devices '0,1'`
-
-Try other variants `Ladv1ablation_op2.py`,`Ladv1ablation_op3.py`,`Ladv2ablation_op1.py`,`Ladv2ablation_op2.py`,`Ladv2ablation_op3.py`.
+* Try other variants `Ladv1ablation_op2.py`,`Ladv1ablation_op3.py`,`Ladv2ablation_op1.py`,`Ladv2ablation_op2.py`,`Ladv2ablation_op3.py`.
 
 ## Generate Evaluation Images
 
